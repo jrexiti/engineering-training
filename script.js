@@ -32,6 +32,15 @@ closeModalButton[0].addEventListener('click', function () {
 })
 console.log('jiraTitles', jiraTitles)
 console.log('jiraLinks', jiraLinks)
+loop(jiraLinks);
+loop(jiraTitles)
+
+function loop(list){
+    for (let i = 0; i< list.length; i++){
+        console.log(list[i])
+    }
+}
+
 
 
 
