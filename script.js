@@ -46,7 +46,7 @@ function loop(list){
     }
 }
 
-//Arrays builtin iterator.
+//Arrays for each iterator.
 jiraLinks.forEach(link =>{console.log(link)})
 jiraTitles.forEach(title =>{console.log(title)})
 
