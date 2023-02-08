@@ -32,14 +32,23 @@ closeModalButton[0].addEventListener('click', function () {
 })
 console.log('jiraTitles', jiraTitles)
 console.log('jiraLinks', jiraLinks)
-loop(jiraLinks);
+
+loop(jiraLinks)
 loop(jiraTitles)
 
+
+
+
+//Custom array iterator
 function loop(list){
     for (let i = 0; i< list.length; i++){
         console.log(list[i])
     }
 }
+
+//Arrays builtin iterator.
+jiraLinks.forEach(link =>{console.log(link)})
+jiraTitles.forEach(title =>{console.log(title)})
 
 
 
