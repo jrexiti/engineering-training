@@ -20,6 +20,9 @@ var jiraLinks = [
     'https://totalwine.atlassian.net/browse/TT-19'
 ]
 
+
+
+
 console.log("modalButton ", buttonID.outerHTML)
 buttonID.addEventListener('click', function () {
     console.log("Open modal button clicked!")
@@ -33,8 +36,18 @@ closeModalButton[0].addEventListener('click', function () {
 console.log('jiraTitles', jiraTitles)
 console.log('jiraLinks', jiraLinks)
 
+
 loop(jiraLinks)
 loop(jiraTitles)
+nestedloop(jiraLinks, jiraTitles)
+
+console.log("*******************************")
+//console.log(jiraObject)
+
+
+
+
+console.log("*******************************")
 
 
 
@@ -46,9 +59,29 @@ function loop(list){
     }
 }
 
-//Arrays for each iterator.
+
+console.log("*******************************")
+
+/*Arrays for each iterator.
+
 jiraLinks.forEach(link =>{console.log(link)})
 jiraTitles.forEach(title =>{console.log(title)})
+*/
+
+//nested loop
+function nestedloop(list1, list2){
+    for (let i=0; i< list1.length; i++){
+       // for(let j=0; j<list2.length; j++){
+            let link = list1[i],  title = list2[i];
+            const jiraObject = {
+                link,  title
+             }
+            console.log("jiraObjects", jiraObject)
+            
+
+        
+    }
+}
 
 
 
