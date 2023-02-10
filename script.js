@@ -71,7 +71,6 @@ jiraTitles.forEach(title =>{console.log(title)})
 //nested loop
 function nestedloop(list1, list2){
     for (let i=0; i< list1.length; i++){
-       // for(let j=0; j<list2.length; j++){
             let link = list1[i],  title = list2[i];
             const jiraObject = {
                 link,  title
