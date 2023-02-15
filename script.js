@@ -84,14 +84,15 @@ function nestedloop(list1, list2){
 
 function addToArr(list1, list2){
     let arr = []
-    for (let i=0; i< list1.length; i++){
+    for (let i=0; i<= list1.length; i++){
             let link = list1[i],  title = list2[i];
 
             const jiraObject = {
                 link,  title
              }
              arr.push(jiraObject)
-             console.log(arr[i])
+             console.log(arr.indexOf(arr[i]),arr[i])
+             continue
              
 
             
