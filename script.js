@@ -39,7 +39,7 @@ console.log('jiraLinks', jiraLinks)
 
 loop(jiraLinks)
 loop(jiraTitles)
-nestedloop(jiraLinks, jiraTitles)
+addToArr(jiraLinks, jiraTitles)
 
 console.log("*******************************")
 //console.log(jiraObject)
@@ -82,6 +82,23 @@ function nestedloop(list1, list2){
     }
 }
 
+function addToArr(list1, list2){
+    let arr = []
+    for (let i=0; i< list1.length; i++){
+            let link = list1[i],  title = list2[i];
+
+            const jiraObject = {
+                link,  title
+             }
+             arr.push(jiraObject)
+             console.log(arr[i])
+             
+
+            
+
+        
+    }
+}
 
 
 
