@@ -38,11 +38,6 @@ loop(jiraTitles);
 addToArr(jiraLinks, jiraTitles);
 printToUl(jiraLinks, jiraTitles);
 
-const hi = listElement.innerText;
-console.log("***********");
-
-console.log(hi);
-
 function loop(list) {
   for (let i = 0; i < list.length; i++) {
     console.log(list[i]);
