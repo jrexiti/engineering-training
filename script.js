@@ -77,12 +77,13 @@ function createUl(list1, list2) {
   for (let i = 0; i < list1.length; i++) {
     let link = list1[i],
       title = list2[i],
-      combo = [];
+      combo = [],
+      listItem;
     combo.push(title, link);
 
     console.log(combo);
 
-    const listItem = document.createElement("li");
+    listItem = document.createElement("li");
     listElement.prepend(listItem);
   }
 }
