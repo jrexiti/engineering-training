@@ -74,18 +74,13 @@ function addToArr(list1, list2) {
 }
 
 function createUl(list1, list2) {
-  let arr = [];
-
   for (let i = 0; i < list1.length; i++) {
     let link = list1[i],
-      title = list2[i];
+      title = list2[i],
+      combo = [];
+    combo.push(title, link);
 
-    const jiraObject = {
-      link,
-      title,
-    };
-    arr.push(jiraObject);
-    console.log(arr[i]);
+    console.log(combo);
 
     const listItem = document.createElement("li");
     listElement.prepend(listItem);
