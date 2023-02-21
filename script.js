@@ -5,6 +5,7 @@ var buttonID = document.getElementById("modalButton");
 var hiddenModal = document.getElementById("modalContainer");
 var closeModalButton = document.getElementsByClassName("close-modal-button");
 var modalContainer = document.getElementById("modalContainer");
+
 var jiraTitles = [
   "Create a public repository under your GitHub account",
   "Create a new script file, and import it into index.html and add a console log",
@@ -12,6 +13,7 @@ var jiraTitles = [
   "JavaScript: Event Listeners - Add Toggle Button Inside of Modal",
   "JavaScript: Functions - Write a function to toggle hidden class on modal",
 ];
+
 var jiraLinks = [
   "https://totalwine.atlassian.net/browse/TT-2",
   "https://totalwine.atlassian.net/browse/TT-16",
@@ -20,23 +22,23 @@ var jiraLinks = [
   "https://totalwine.atlassian.net/browse/TT-19",
 ];
 
-console.log("modalButton ", buttonID.outerHTML);
-buttonID.addEventListener("click", function () {
-  console.log("Open modal button clicked!");
-  hiddenModal.classList.toggle("hidden");
-});
-console.log("close-modal-button", closeModalButton);
-closeModalButton[0].addEventListener("click", function () {
-  console.log("Clicked close modal button!");
-  modalContainer.classList.toggle("hidden");
-});
-console.log("jiraTitles", jiraTitles);
-console.log("jiraLinks", jiraLinks);
+// console.log("modalButton ", buttonID.outerHTML);
+// buttonID.addEventListener("click", function () {
+//   console.log("Open modal button clicked!");
+//   hiddenModal.classList.toggle("hidden");
+// });
+// console.log("close-modal-button", closeModalButton);
+// closeModalButton[0].addEventListener("click", function () {
+//   console.log("Clicked close modal button!");
+//   modalContainer.classList.toggle("hidden");
+// });
+// console.log("jiraTitles", jiraTitles);
+// console.log("jiraLinks", jiraLinks);
 
 loop(jiraLinks);
 loop(jiraTitles);
 addToArr(jiraLinks, jiraTitles);
-printToUl(jiraLinks, jiraTitles);
+createUl(jiraLinks, jiraTitles);
 
 function loop(list) {
   for (let i = 0; i < list.length; i++) {
@@ -71,7 +73,7 @@ function addToArr(list1, list2) {
   }
 }
 
-function printToUl(list1, list2) {
+function createUl(list1, list2) {
   let arr = [];
 
   for (let i = 0; i < list1.length; i++) {
