@@ -1,5 +1,4 @@
 console.log("Engineering Training!");
-
 var listElement = document.querySelector(".grid-container");
 var buttonID = document.getElementById("modalButton");
 var hiddenModal = document.getElementById("modalContainer");
@@ -84,6 +83,7 @@ function createUl(list1, list2) {
     console.log(combo);
 
     listItem = document.createElement("li");
+    listItem.className = "bi bi-check-circle-fill";
     listElement.append(listItem);
     listItem.innerHTML = `title${title}, link${link}`;
   }
