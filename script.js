@@ -84,8 +84,7 @@ function createUl(list1, list2) {
     console.log(combo);
 
     listItem = document.createElement("li");
-    listElement.prepend(listItem);
+    listElement.append(listItem);
     listItem.innerHTML = `title${title}, link${link}`;
-    listElement.appendChild(listItem);
   }
 }
