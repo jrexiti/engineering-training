@@ -78,13 +78,13 @@ function createUl(list1, list2) {
       title = list2[i],
       combo = [],
       listItem;
+
     combo.push(title, link);
 
     console.log(combo);
 
     listItem = document.createElement("li");
-    listItem.className = "bi bi-check-circle-fill";
     listElement.append(listItem);
-    listItem.innerHTML = `title${title}, link${link}`;
+    listItem.innerHTML = `<i class="bi bi-check-circle-fill"></i> title${title}, link${link}`;
   }
 }
