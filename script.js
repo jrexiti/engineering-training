@@ -38,7 +38,7 @@ loop(jiraLinks);
 loop(jiraTitles);
 addToArr(jiraLinks, jiraTitles);
 createUl(jiraLinks, jiraTitles);
-loadModal(buttonID, hiddenModal);
+loadModal();
 
 function loop(list) {
   for (let i = 0; i < list.length; i++) {
@@ -94,11 +94,11 @@ function createUl(list1, list2) {
 
 function loadData(value) {
   setTimeout(() => {
-    console.log("Delayed for 1 Second");
+    console.log("Data loaded");
   }, value);
 }
 
-function loadModal(buttonID, hiddenModal) {
+function loadModal() {
   buttonID.addEventListener(
     "click",
     () => {
