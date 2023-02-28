@@ -38,6 +38,7 @@ loop(jiraLinks);
 loop(jiraTitles);
 addToArr(jiraLinks, jiraTitles);
 createUl(jiraLinks, jiraTitles);
+loadModal(buttonID, hiddenModal);
 
 function loop(list) {
   for (let i = 0; i < list.length; i++) {
@@ -90,3 +91,32 @@ function createUl(list1, list2) {
     `;
   }
 }
+
+function loadData(value) {
+  setTimeout(() => {
+    console.log("Delayed for 1 Second");
+  }, value);
+}
+
+function loadModal(buttonID, hiddenModal) {
+  buttonID.addEventListener(
+    "click",
+    () => {
+      hiddenModal.classList.toggle("hidden");
+    },
+    loadData(1000)
+  );
+}
+
+// console.log("modalButton ", buttonID.outerHTML);
+// buttonID.addEventListener("click", function () {
+//   console.log("Open modal button clicked!");
+//   hiddenModal.classList.toggle("hidden");
+// });
+// console.log("close-modal-button", closeModalButton);
+// closeModalButton[0].addEventListener("click", function () {
+//   console.log("Clicked close modal button!");
+//   modalContainer.classList.toggle("hidden");
+// });
+// console.log("jiraTitles", jiraTitles);
+// console.log("jiraLinks", jiraLinks);
