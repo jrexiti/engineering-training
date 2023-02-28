@@ -85,6 +85,8 @@ function createUl(list1, list2) {
 
     listItem = document.createElement("li");
     listElement.append(listItem);
-    listItem.innerHTML = `<i class="bi bi-check-circle-fill"></i> title${title}, link${link}`;
+    listItem.innerHTML = `<i class="bi bi-check-circle-fill">
+    <a href="${link}"/a>${title}</i>
+    `;
   }
 }
