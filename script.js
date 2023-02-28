@@ -1,4 +1,5 @@
 console.log("Engineering Training!");
+
 var listElement = document.querySelector(".grid-container");
 var buttonID = document.getElementById("modalButton");
 var hiddenModal = document.getElementById("modalContainer");
@@ -95,8 +96,9 @@ function loadModal() {
     loadData(1000)
   );
 }
+
 function closeModal() {
-  closeModalButton[0].addEventListener("click", function () {
+  closeModalButton[0].addEventListener("click", () => {
     modalContainer.classList.toggle("hidden");
   });
 }
