@@ -21,24 +21,12 @@ var jiraLinks = [
   "https://totalwine.atlassian.net/browse/TT-19",
 ];
 
-// console.log("modalButton ", buttonID.outerHTML);
-// buttonID.addEventListener("click", function () {
-//   console.log("Open modal button clicked!");
-//   hiddenModal.classList.toggle("hidden");
-// });
-// console.log("close-modal-button", closeModalButton);
-// closeModalButton[0].addEventListener("click", function () {
-//   console.log("Clicked close modal button!");
-//   modalContainer.classList.toggle("hidden");
-// });
-// console.log("jiraTitles", jiraTitles);
-// console.log("jiraLinks", jiraLinks);
-
 loop(jiraLinks);
 loop(jiraTitles);
 addToArr(jiraLinks, jiraTitles);
 createUl(jiraLinks, jiraTitles);
 loadModal();
+closeModal();
 
 function loop(list) {
   for (let i = 0; i < list.length; i++) {
@@ -107,16 +95,8 @@ function loadModal() {
     loadData(1000)
   );
 }
-
-// console.log("modalButton ", buttonID.outerHTML);
-// buttonID.addEventListener("click", function () {
-//   console.log("Open modal button clicked!");
-//   hiddenModal.classList.toggle("hidden");
-// });
-// console.log("close-modal-button", closeModalButton);
-// closeModalButton[0].addEventListener("click", function () {
-//   console.log("Clicked close modal button!");
-//   modalContainer.classList.toggle("hidden");
-// });
-// console.log("jiraTitles", jiraTitles);
-// console.log("jiraLinks", jiraLinks);
+function closeModal() {
+  closeModalButton[0].addEventListener("click", function () {
+    modalContainer.classList.toggle("hidden");
+  });
+}
