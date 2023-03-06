@@ -88,13 +88,11 @@ function loadData(value) {
 }
 
 function loadModal() {
-  buttonID.addEventListener(
-    "click",
-    () => {
-      hiddenModal.classList.toggle("hidden");
-    },
-    loadData(1000)
-  );
+  buttonID.addEventListener("click", () => {
+    hiddenModal.classList.toggle("hidden");
+
+    loadData(1000);
+  });
 }
 
 function closeModal() {
