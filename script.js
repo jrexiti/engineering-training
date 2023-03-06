@@ -24,7 +24,7 @@ var jiraLinks = [
 
 loop(jiraLinks);
 loop(jiraTitles);
-addToArr(jiraLinks, jiraTitles);
+
 createUl(jiraLinks, jiraTitles);
 loadModal();
 closeModal();
@@ -84,12 +84,15 @@ function createUl(list1, list2) {
 function loadData(value) {
   setTimeout(() => {
     console.log("Data loaded");
+    modalContainer.classList.toggle("hidden");
+    addToArr(jiraLinks, jiraTitles);
   }, value);
 }
 
 function loadModal() {
   buttonID.addEventListener("click", () => {
     hiddenModal.classList.toggle("hidden");
+
 
     loadData(1000);
   });
