@@ -24,7 +24,6 @@ var jiraLinks = [
 
 loop(jiraLinks);
 loop(jiraTitles);
-
 createUl(jiraLinks, jiraTitles);
 loadModal();
 closeModal();
@@ -92,8 +91,6 @@ function loadData(value) {
 function loadModal() {
   buttonID.addEventListener("click", () => {
     hiddenModal.classList.toggle("hidden");
-
-
     loadData(1000);
   });
 }
