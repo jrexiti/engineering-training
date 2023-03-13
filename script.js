@@ -22,75 +22,40 @@ var jiraLinks = [
   "https://totalwine.atlassian.net/browse/TT-19",
 ];
 
-loop(jiraLinks);
-loop(jiraTitles);
-createUl(jiraLinks, jiraTitles);
 loadModal();
 closeModal();
 
-function loop(list) {
-  for (let i = 0; i < list.length; i++) {
-    console.log(list[i]);
-  }
-}
-
-function aLoop(list1, list2) {
-  for (let i = 0; i < list1.length; i++) {
-    let link = list1[i],
-      title = list2[i];
-    const jiraObject = {
-      link,
-      title,
-    };
-    console.log("jiraObjects", jiraObject);
-  }
-}
-
-function addToArr(list1, list2) {
-  let arr = [];
-  for (let i = 0; i < list1.length; i++) {
-    let link = list1[i],
-      title = list2[i];
-
-    const jiraObject = {
-      link,
-      title,
-    };
-    arr.push(jiraObject);
-    console.log(i, arr[i]);
-  }
-}
-
 function createUl(list1, list2) {
+  let response = "";
   for (let i = 0; i < list1.length; i++) {
     let link = list1[i],
-      title = list2[i],
-      combo = [],
-      listItem;
+      title = list2[i];
 
-    combo.push(title, link);
+    const jiraObject = {
+      link,
+      title,
+    };
+    console.log(jiraObject);
 
-    console.log(combo);
-
-    listItem = document.createElement("li");
-    listElement.append(listItem);
-    listItem.innerHTML = `<i class="bi bi-check-circle-fill">
-    <a href="${link}"/a>${title}</i>
+    response += `<i class="bi bi-check-circle-fill"/i>
+    <a href="${link}">${title}</a>
     `;
   }
+  listElement.innerHTML = response;
 }
 
 function loadData(value) {
   setTimeout(() => {
     console.log("Data loaded");
     modalContainer.classList.toggle("hidden");
-    addToArr(jiraLinks, jiraTitles);
+    createUl(jiraLinks, jiraTitles);
   }, value);
 }
 
 function loadModal() {
   buttonID.addEventListener("click", () => {
     hiddenModal.classList.toggle("hidden");
+
     loadData(1000);
   });
 }
