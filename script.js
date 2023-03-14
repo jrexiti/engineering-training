@@ -37,7 +37,7 @@ function createUl(list1, list2) {
     };
     console.log(jiraObject);
 
-    response += `<i class="bi bi-check-circle-fill"/i>
+    response += `<li class="bi bi-check-circle-fill"/li>
     <a href="${link}">${title}</a>
     `;
   }
