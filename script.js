@@ -26,29 +26,33 @@ loadModal();
 closeModal();
 
 function createUl(list1, list2) {
-  let response = "";
-  for (let i = 0; i < list1.length; i++) {
-    let link = list1[i],
-      title = list2[i];
+  return new Promise((resolve) => {
+    let response = "";
+    for (let i = 0; i < list1.length; i++) {
+      let link = list1[i],
+        title = list2[i];
 
-    const jiraObject = {
-      link,
-      title,
-    };
-    console.log(jiraObject);
+      const jiraObject = {
+        link,
+        title,
+      };
+      console.log(jiraObject);
 
-    response += `<li class="bi bi-check-circle-fill"/li>
+      response += `<li class="bi bi-check-circle-fill"/li>
     <a href="${link}">${title}</a>
     `;
-  }
-  listElement.innerHTML = response;
+    }
+    resolve(response);
+  });
 }
 
 function loadData(value) {
   setTimeout(() => {
     console.log("Data loaded");
     modalContainer.classList.toggle("hidden");
-    createUl(jiraLinks, jiraTitles);
+    createUl(jiraLinks, jiraTitles).then(function (response) {
+      listElement.innerHTML = response;
+    });
   }, value);
 }
 
