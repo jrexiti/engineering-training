@@ -30,16 +30,20 @@ function createUl(list1, list2) {
     let response = "";
     for (let i = 0; i < list1.length; i++) {
       let link = list1[i],
-        title = list2[i];
+        title = list2[i],
+        jlink,
+        jtitle;
 
       const jiraObject = {
         link,
         title,
       };
-      console.log(jiraObject);
+      jlink = jiraObject.link;
+      jtitle = jiraObject.title;
+      console.log(jlink, jtitle);
 
       response += `<li class="bi bi-check-circle-fill"/li>
-    <a href="${link}">${title}</a>
+    <a href="${jlink}">${jtitle}</a>
     `;
     }
     resolve(response);
