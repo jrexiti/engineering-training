@@ -29,21 +29,14 @@ function createUl(list1, list2) {
   return new Promise((resolve) => {
     let response = "";
     for (let i = 0; i < list1.length; i++) {
-      let link = list1[i],
-        title = list2[i],
-        jlink,
-        jtitle;
-
       const jiraObject = {
-        link,
-        title,
+        link: list1[i],
+        title: list2[i],
       };
-      jlink = jiraObject.link;
-      jtitle = jiraObject.title;
-      console.log(jlink, jtitle);
+      let { link, title } = jiraObject;
 
       response += `<li class="bi bi-check-circle-fill"/li>
-    <a href="${jlink}">${jtitle}</a>
+    <a href="${link}">${title}</a>
     `;
     }
     resolve(response);
