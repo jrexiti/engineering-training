@@ -38,19 +38,24 @@ function createUl(list1, list2) {
       response += `<li class="bi bi-check-circle-fill"/li>
     <a href="${link}">${title}</a>
     `;
+      console.log(jiraObject);
     }
+
     resolve(response);
   });
 }
-
 function loadData(value) {
-  setTimeout(() => {
-    console.log("Data loaded");
-    modalContainer.classList.toggle("hidden");
-    createUl(jiraLinks, jiraTitles).then(function (response) {
-      listElement.innerHTML = response;
-    });
-  }, value);
+  let renderedData = false;
+  if (!renderedData) {
+    setTimeout(() => {
+      console.log("Data loaded");
+      modalContainer.classList.toggle("hidden");
+      createUl(jiraLinks, jiraTitles).then(function (response) {
+        listElement.innerHTML = response;
+        renderedData == true;
+      });
+    }, value);
+  }
 }
 
 function loadModal() {
