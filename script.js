@@ -44,15 +44,17 @@ function createUl(list1, list2) {
     resolve(response);
   });
 }
+let renderedData = false;
 function loadData(value) {
-  let renderedData = false;
+  console.log(renderedData);
   if (!renderedData) {
     setTimeout(() => {
       console.log("Data loaded");
       modalContainer.classList.toggle("hidden");
       createUl(jiraLinks, jiraTitles).then(function (response) {
         listElement.innerHTML = response;
-        renderedData == true;
+        renderedData = true;
+        console.log(renderedData);
       });
     }, value);
   }
