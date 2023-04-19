@@ -25,44 +25,47 @@ var jiraLinks = [
 loadModal();
 closeModal();
 
-function createUl(list1, list2) {
-  return new Promise((resolve) => {
-    let response = "";
-    for (let i = 0; i < list1.length; i++) {
-      const jiraObject = {
-        link: list1[i],
-        title: list2[i],
-      };
-      let { link, title } = jiraObject;
+const utils = {
+  createUl: function (list1, list2) {
+    return new Promise((resolve) => {
+      let response = "";
+      for (let i = 0; i < list1.length; i++) {
+        const jiraObject = {
+          link: list1[i],
+          title: list2[i],
+        };
+        let { link, title } = jiraObject;
 
-      response += `<li class="bi bi-check-circle-fill"/li>
+        response += `<li class="bi bi-check-circle-fill"/li>
     <a href="${link}">${title}</a>
     `;
-      console.log(jiraObject);
-    }
+        console.log(jiraObject);
+      }
 
-    resolve(response);
-  });
-}
+      resolve(response);
+    });
+  },
+  loadData: function (value) {
+    if (!renderedData) {
+      setTimeout(() => {
+        console.log("Data loaded");
+        modalContainer.classList.toggle("hidden");
+        utils.createUl(jiraLinks, jiraTitles).then(function (response) {
+          listElement.innerHTML = response;
+          renderedData = true;
+        });
+      }, value);
+    }
+  },
+};
+
 let renderedData = false;
-function loadData(value) {
-  if (!renderedData) {
-    setTimeout(() => {
-      console.log("Data loaded");
-      modalContainer.classList.toggle("hidden");
-      createUl(jiraLinks, jiraTitles).then(function (response) {
-        listElement.innerHTML = response;
-        renderedData = true;
-      });
-    }, value);
-  }
-}
 
 function loadModal() {
   buttonID.addEventListener("click", () => {
     hiddenModal.classList.toggle("hidden");
 
-    loadData(1000);
+    utils.loadData(1000);
   });
 }
 
